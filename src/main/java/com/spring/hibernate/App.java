@@ -12,10 +12,12 @@ import com.spring.hibernate.entities.Student;
  */
 public class App 
 {
-    public static void main( String[] args )
+    private static ApplicationContext context;
+
+	public static void main( String[] args )
     {
     	
-       ApplicationContext context=new ClassPathXmlApplicationContext("config.xml");
+       context = new ClassPathXmlApplicationContext("config.xml");
        StudentDao studentDao= context.getBean("studentDao",StudentDao.class);
        Student student=new Student(2324,"Manoj","Panipat");
        
